@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <ul>
+        <li>Lorem, ipsum.</li>
+        <li>Molestias, odit.</li>
+        <li onclick="this.innerText='Someone clicked'">Consectetur, a!</li>
+        <li onclick="alert('Hello, who are you?')">Eligendi, tenetur.</li>
+        <li onclick="clickHandler(event)">Hic, reprehenderit.</li>
+        <li id="lastPerson">Delectus, nesciunt!</li>
+    </ul>
+
+    <script>
+        function clickHandler(){
+            console.log(event.target.innerText)
+        }
+        document.getElementById('lastPerson').addEventListener('click', clickHandler)
+    </script>
+</body>
+</html>

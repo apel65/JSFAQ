@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="container">
+       <h2>Name list of my team</h2>
+        <ul id="mylist">
+            
+        </ul>
+        <input id="addName" type="text" placeholder="Type here name......">
+        <br>
+        <br>
+        <em><span>* Touch name for remove.</span></em>
+        <br>
+        <button id="addNew">Add Name</button>
+   </div>
+
+   <script>
+       document.getElementById('addNew').addEventListener('click', function(){
+           const newItem = document.getElementById('mylist');
+           const name = document.getElementById('addName').value;
+           const nameList = document.createElement('li');
+           nameList.innerText = name;
+           newItem.appendChild(nameList);
+           document.getElementById('addName').value = '';
+       })
+      document.getElementById('mylist').addEventListener('click', function(){
+           event.target.parentNode.removeChild(event.target);
+
+      })
+
+    
+   </script>
+</body>
+</html>
